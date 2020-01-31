@@ -1,0 +1,19 @@
+html, body {
+	margin: 0;
+	padding: 0;
+}
+#header {
+	color: white;
+	background-color: black;
+	text-align: center;
+	padding: 20px;
+	font-family: 'Nanum Gothic', sans-serif;
+}
+#title {
+	font-family: 'Bangers', cursive;
+	font-size: 30px;
+	padding: 10px;
+}
+#picture img {
+	width: 33%;
+}

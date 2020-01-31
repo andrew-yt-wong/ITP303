@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Lecture 3 Coachella</title>
+	<style>
+		#header {
+			background-color: #f5dfc0;
+		}
+		#header h1 {
+			margin-top: 0;
+			margin-bottom: 0;
+		}
+		html, body {
+			margin: 0;
+			padding: 0;
+		}
+		#about {
+			background-color: pink;
+		}
+		#about #column1 {
+			background-color: lightgreen;
+			width: 600px;
+			float: left;
+			padding-top: 30px;
+			text-align: right;
+		}
+		#about #column2 {
+			background-color: pink;
+			width: 400px;
+			float: left;
+			/* float has a side effect - any element that comes AFTER a floated element tries to wrap around this element */
+		}
+		/* Use this class to clear (aka force stop) floats at any point */
+		.clearfloat {
+			clear: both;
+		}
+		#about #column2 p {
+			margin-top: 0;
+			margin-bottom: 0;
+		}
+		#artists {
+			background-color: skyblue;
+			/* THe width needs to be wide enough to contain all the columns in one row*/
+			/* Calculated 1050 */
+			width: 1056px; 
+			margin-left: auto;
+			margin-right: auto;
+			margin: 0 auto;
+		}
+		#artists h2 {
+			margin-top: 0;
+			margin-bottom: 0;
+		}
+		#artists .column {
+			background-color: #FEF587;
+			width: 300px;
+			padding: 15px;
+			margin: 10px;
+			float: left;
+			/* float causes elements after this one to wrap */
+
+			/* border shorthands */
+			border: 1px solid black;
+		}
+		#artists .column img {
+			/* Image size is always same as it's parents width */
+			width: 100%;
+		}
+		.blue-text {
+			color: blue;
+		}
+		#footer {
+			background-color: orange;
+		}
+	</style>
+</head>
+<body>
+	<div id="header">
+		<h1 class="blue-text">Coachella</h1>
+	</div>
+
+	<div id="about">
+		<div id="column1">
+			<img src="images/coachella.png"/>
+		</div>
+		<div id="column2">
+			<p class="blue-text">Coachella is awesome. It's held in Indo, California.</p>
+			<p class="blue-text">Coachella is awesome. It's held in Indo, California.</p>
+			<p class="blue-text">Coachella is awesome. It's held in Indo, California.</p>
+			<p class="blue-text">Coachella is awesome. It's held in Indo, California.</p>
+			<p class="blue-text">Coachella is awesome. It's held in Indo, California.</p>
+		</div>
+		<!-- Add an empty div with .clearfloat to STOP the float right here -->
+		<div class="clearfloat"></div>
+	</div>
+
+	<div id="artists">
+		<h2>Artists</h2>
+		<div class="column">
+			<img src="images/ariana.jpg"/>
+			<h3>Ariana Grande</h3>
+		</div>
+		<div class="column">
+			<img src="images/gambino.jpg"/>
+			<h3>Childish Gambino</h3>
+		</div>
+		<div class="column">
+			<img src="images/blackpink.jpg"/>
+			<h3>Black Pink</h3>
+		</div>
+		<div class="clearfloat"></div>
+	</div>
+
+	<div id="footer">
+		Copyright 2020. ITP Web Dev.
+	</div>
+</body>
+</html>

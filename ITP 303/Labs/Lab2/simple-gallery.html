@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Simple Photo Gallery</title>
+	<style>
+		html, body {
+			margin: 0;
+			padding: 0;
+		}
+		#characters {
+			margin: 0 auto;
+			width: 690px;
+			border: 2px solid black;
+			text-align: center;
+		}
+		#characters .column img {
+			width: 200px;
+			opacity: 0.6;
+		}
+		#characters .column p {
+			padding: 5px;
+			text-align: center;
+			background-color: pink;
+			position: absolute;
+			bottom: 0;
+			width: 200px;
+			visibility: hidden;
+		}
+		#characters .column {
+			float: left;
+			padding: 10px;
+
+			position: relative;
+		}
+		#characters .column:hover img {
+			opacity: 1;
+		}
+		#characters .column:hover p {
+			visibility: visible;
+		}
+		.clearfloat {
+			clear: both;
+		}
+	</style>
+</head>
+<body>
+	<div id="characters">
+		<h1>SSBU Characters</h1>
+
+		<div class="column">
+			<img src="images/cloud.jfif"/>
+			<p>Cloud</p>
+		</div>
+
+		<div class="column">
+			<img src="images/roy.jfif"/>
+			<p>Roy</p>
+		</div>
+
+		<div class="column">
+			<img src="images/joker.jfif"/>
+			<p>Joker</p>
+		</div>
+
+		<div class="clearfloat"></div>
+
+		<div class="column">
+			<img src="images/marth.jfif"/>
+			<p>Marth</p>
+		</div>
+
+		<div class="column">
+			<img src="images/banjo.jfif"/>
+			<p>Banjo</p>
+		</div>
+
+		<div class="clearfloat"></div>
+
+	</div>
+</body>
+</html>

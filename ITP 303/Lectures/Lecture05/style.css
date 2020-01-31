@@ -1,0 +1,127 @@
+html, body {
+	margin: 0;
+	padding: 0;
+	font-family: Arial;
+}
+#header {
+	height: 400px;
+	line-height: 400px;
+	background-image: url("images/bookstore-bg.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center top;
+	text-align: center;
+}
+#header h1 {
+	font-size: 40px;
+	color: white;
+	margin: 0;
+}
+h2 {
+	text-align: center;
+	margin-bottom: 40px;
+}
+#best-seller, #sale {
+	padding-top: 20px;
+	padding-bottom: 30px;
+	/*border-bottom: 6px solid #ccc;*/
+}
+
+/* -- All products are in a div .item -- */
+.item img {
+	width: 100%;
+}
+.item .name {
+	font-weight: bold;
+	text-align: center;
+}
+.item .price {
+	text-align: center;
+}
+
+/* -- Best Seller -- */
+#best-seller {
+	/* #best-seller's parent is the browser */
+	width: 90%;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: yellow;
+
+	max-width: 900px;
+}
+#best-seller .row .item {
+	background-color: #cdcdcd;
+	float: left;
+	/* The width is 31.333% of tits parent/grandparent/etc that as has a set width */
+	width: 31.333%;
+	padding: 10px;
+	margin: 10px;
+
+	/* Any padding or border will now be a part of the box. Padding or border will not make this div wider.  */
+	box-sizing: border-box;
+
+	padding-left: 10px;
+	padding-right: 10px;
+	border: 2px solid black;
+	margin-left: 1%;
+	margin-right: 1%;
+}
+/* A better way to clear floats */
+.row:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+/* -- On Sale -- */
+#sale {
+	width: 90%;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: orange;
+}
+#sale .row .item {
+	background-color: #cdcdcd;
+	float: left;
+	width: 23%;
+	box-sizing: border-box;
+	padding: 10px;
+	margin: 10px;
+	margin-left: 1%;
+	margin-right: 1%;
+	
+}
+#footer {
+	background-color: black;
+	color: #aaa;
+	font-size: 10px;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+}
+
+/* Write media queries for screens smaller than desktop. All the code above was for desktop */
+
+@media (max-width: 991px) {
+	/* Any screen from size 0 to 991px, apply the following CSS rules */
+	#best-seller {
+		background-color: green;
+	}
+}
+@media (max-width: 767px) {
+	/* Any screen from size 0 to 767px, apply the following CSS rules */
+	#best-seller {
+		background-color: pink;
+	}
+	#sale .row .item {
+		width: 48%;
+	}
+	#sale {
+		width: 400px;
+	}
+}
+@media (max-width: 575px) {
+	/* Any screen from size 0 to 575px, apply the following CSS rules */
+	#best-seller {
+		background-color: slategray;
+	}
+}

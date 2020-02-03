@@ -1,6 +1,10 @@
 html, body {
 	margin: 0;
 	padding: 0;
+	font-family: Arial;
+}
+div {
+	display: block;
 }
 #header {
 	color: white;
@@ -9,11 +13,130 @@ html, body {
 	padding: 20px;
 	font-family: 'Nanum Gothic', sans-serif;
 }
-#title {
-	font-family: 'Bangers', cursive;
-	font-size: 30px;
-	padding: 10px;
+#block {
+	width: 100%;
+	margin: 0 auto;
 }
-#picture img {
-	width: 33%;
+#block #item {
+	width: 90%;
+	margin: 0 auto;
+}
+#block #item #visual {
+	float: left;
+	width: 100%;
+	box-sizing: border-box;
+}
+#block #item #visual #product-name-mobile {
+	font-family: 'Kelly Slab', cursive;
+	display: initial;
+	font-size: 25px;
+}
+#block #item #visual #picture {
+	width: 100%;
+}
+#block #item #visual #picture img {
+	width: 100%;
+}
+#block #item #visual #promo {
+	background-color: lightgreen;
+	border: 3px solid green;
+	border-radius: 1px;
+	width: 90%;
+	text-align: center;
+	margin-top: 10px;
+	margin-left: auto;
+	margin-right: auto;
+	box-sizing: border-box;
+
+}
+#block #item #price-desc {
+	float: left;
+	width: 100%;
+	margin-top: 10px;
+	box-sizing: border-box;
+}
+#block #item #price-desc #product-name-tablet {
+	font-family: 'Kelly Slab', cursive;
+	display: none;
+	font-size: 19px;
+}
+#block #item:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+#related-products {
+	box-sizing: border-box;
+	width: 90%;
+	margin: 0 auto;
+}
+#related-products #collection .rel {
+	margin: 10px auto;
+	position: relative;
+	width: 60%;
+	border: 2px solid black;
+	border-radius: 2px;
+	box-sizing: border-box;
+}
+#related-products #collection .rel .overlay{
+	visibility: hidden;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-color: black;
+	opacity: 80%;
+}
+#related-products #collection .rel:hover .overlay{
+	visibility: visible;
+	font-family: 'Nanum Gothic', sans-serif;
+}
+#related-products #collection .rel .overlay .item-name{
+	opacity: 100%;
+	color: white;
+	text-align: center;
+	margin-top: 60%;
+	font-size: 20px;
+	font-style: bold;
+}
+#related-products #collection .rel img {
+	width: 100%;
+}
+#related-products #collection:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+@media (min-width: 768px) {
+	#block #item #visual {
+		margin-top: 30px;
+		width: 48%;
+	}
+	#block #item #visual #product-name-mobile {
+		display: none;
+	}
+	#block #item #price-desc {
+		margin-left: 1%;
+		width: 48%;
+	}
+	#block #item #price-desc #product-name-tablet {
+		display: initial;
+	}
+	#related-products #collection {
+		width: 96%;
+	}
+	#related-products #collection .rel {
+		width: 48%;
+		float: left;
+		margin: 1%;
+	}
+}
+
+@media (min-width: 992px) {
+	#block {
+		max-width: 1000px;
+	}
+	#related-products #collection .rel {
+		width: 23%
+	}
 }

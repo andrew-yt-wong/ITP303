@@ -1,0 +1,63 @@
+html, body {
+	margin: 0;
+	padding: 0;
+}
+
+* {
+	box-sizing: border-box;
+	font-family: 'Noto Sans', sans-serif;
+}
+
+.navbar {
+	background-color: darkslateblue;
+}
+
+.navbar-brand {
+	font-family: 'Righteous', cursive;
+}
+
+#header {
+	background-image: url("images/macaroons.jfif");
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center bottom;
+	text-align: center;
+	padding-top: 60px;
+	padding-bottom: 200px;
+	color: darkslateblue;
+}
+
+#header #company-name {
+	font-family: 'Righteous', cursive;
+	font-size: 50px;
+}
+
+#header #company-desc {
+	font-weight: bold;
+	font-size: 24px;
+}
+
+#content {
+	box-sizing: border-box;
+}
+
+#content img {
+	width: 100%;
+}
+/*lavender*/
+
+#footer {
+	padding: 10px;
+	background-color: darkslateblue;
+	color: white;
+}
+
+@media (min-width: 992px) {
+	#header #company-name {
+		font-size: 80px;
+	}
+
+	#header #company-desc {
+		font-size: 40px;
+	}
+}

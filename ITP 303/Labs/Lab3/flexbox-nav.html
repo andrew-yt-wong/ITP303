@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Flexbox Nav</title>
+	<style type="text/css">
+		html, body {
+			margin: 0;
+			padding: 0;
+		}
+		* {
+			box-sizing: border-box;
+		}
+		div {
+			background-color: skyblue;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+		}
+		a {
+			text-decoration: none;
+			padding: 10px;
+			background-color: skyblue;
+			text-align: center;
+			color: white;
+			font-family: Arial;
+		}
+		a:hover {
+			background-color: blue;
+		}
+		@media (min-width: 768px) {
+			div {
+				flex-direction: row;
+				flex-wrap: wrap;
+			}
+			a {
+				width: 50%;
+			}
+		}
+		@media (min-width: 992px) {
+			div {
+				flex-wrap: nowrap;
+			}
+			a {
+				max-width: 200px;
+			}
+		}
+	</style>
+</head>
+<body>
+	<div>
+		<a href="#">
+			Home
+		</a>
+		<a href="#">
+			About
+		</a>
+		<a href="#">
+			Team
+		</a>
+		<a href="#">
+			Contact
+		</a>
+	</div>
+</body>
+</html>

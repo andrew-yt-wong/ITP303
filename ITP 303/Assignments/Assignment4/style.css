@@ -44,12 +44,34 @@ html, body {
 #content img {
 	width: 100%;
 }
-/*lavender*/
 
-#footer {
-	padding: 10px;
-	background-color: darkslateblue;
-	color: white;
+#content .selfie {
+	padding: 20px;
+}
+
+#content .selfie h2 {
+	font-family: 'Righteous', cursive;
+}
+
+#content .selfie img {
+	width: 70%;
+	margin-bottom: 20px;
+	border-radius: 50%;
+}
+
+#content h1 {
+	font-family: 'Amatic SC', cursive;
+	font-weight: bold;
+	font-size: 45px;
+	padding-top: 50px;
+}
+
+.center {
+	text-align: center;
+}
+
+#content #footer {
+	text-align: left;
 }
 
 @media (min-width: 992px) {

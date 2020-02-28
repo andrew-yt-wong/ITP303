@@ -1,0 +1,11 @@
+#weather {
+	border: 1px solid black;
+	margin: 0 auto;
+	width: 900px;
+}
+
+#list {
+	border: 1px solid black;
+	margin: 50px auto;
+	width: 600px;
+}

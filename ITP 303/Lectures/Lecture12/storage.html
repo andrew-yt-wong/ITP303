@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Web Storage</title>
+	<style>
+		#container {
+			border: 3px solid black;
+			padding: 20px;
+			width: 500px;
+			margin: 0 auto;
+		}
+		h1 {
+			margin-top: 0;
+		}
+		.form-row {
+			display: flex;
+			margin-bottom: 10px;
+		}
+		label {
+			width: 150px;
+			margin-right: 10px;
+		}
+	</style>
+</head>
+<body>
+	<div id="container">
+		<h1>Welcome, <span id="name-display">Stranger</span>!</h1>
+		<form id="form">
+			<div class="form-row">
+				<label for="name">Name:</label>
+				<input type="text" id="name"/>
+			</div>
+			<div class="form-row">
+				<label for="bgcolor">Background Color:</label>
+				<select id="bgcolor">
+					<option value="white">White</option>
+					<option value="pink">Pink</option>
+					<option value="skyblue">Skyblue</option>
+					<option value="lightgreen">Lightgreen</option>
+				</select>
+			</div>
+			<button type="submit">Save</button>
+		</form>
+		<hr>
+		<div>
+			<h2>Fruits</h2>
+			<button id="fruit-button">Display fruits</button>
+			<p id="fruitsDisplay"></p>
+		</div>
+	</div>
+
+<script>
+
+	// When the user first loads the page, apply the styles right away using the saved values in storage
+
+	function setStyles() {
+		// Style the page w/ what user chose
+		// 1. Grab the saved key/value pairs from local storage
+		let savedName = localStorage.getItem("name");
+		let savedBgColor = localStorage.getItem("bgcolor");
+
+		// 2. Apply CSS with the saved values
+		document.querySelector("body").style.backgroundColor = savedBgColor;
+		document.querySelector("#name-display").innerHTML = savedName;
+
+		// 3. Prefill the input tag and dropdown with saved values from the local storage
+		document.querySelector("#name").value = savedName;
+		document.querySelector("#bgcolor").value = savedBgColor;
+	}
+
+	if (localStorage.getItem("name"))
+		setStyles();
+
+	// Can kinda store arrays in local storage
+	let fruitArray = ["apple", "orange", "kiwi"];
+	let fruitString = JSON.stringify(fruitArray);
+	localStorage.setItem("fruits", fruitString);
+
+	document.querySelector("#form").onsubmit = function(event) {
+		event.preventDefault();
+
+		// Grab the user input and save them in variables
+		let nameInput = document.querySelector("#name").value;
+		let bgColorInput = document.querySelector("#bgcolor").value;
+
+		// Save the user input into local storage
+		// Local storage takes key/value pairs, all strings
+
+		localStorage.setItem("name", nameInput);
+		localStorage.setItem("bgcolor", bgColorInput);
+
+		// Call setStyles() to apply the styles every time user changes
+		setStyles();
+	}
+
+	document.querySelector("#fruit-button").onclick = function() {
+		// Grab the fruit string from local storage
+		// Convert it into JS array
+		let fruits = JSON.parse(localStorage.getItem("fruits"));
+		document.querySelector("#fruitsDisplay").innerHTML = fruits[0];
+	}
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+
+

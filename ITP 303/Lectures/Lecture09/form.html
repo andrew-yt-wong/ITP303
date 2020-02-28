@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JS</title>
+	<style>
+		form {
+			width: 500px;
+		}
+		.form-row {
+			margin-bottom: 10px;
+			display: flex;
+		}
+		label {
+			padding-right: 10px;
+			width: 60px;
+		}
+		input {
+			width: 150px;
+			height: 20px;
+		}
+		.error {
+			color: red;
+			font-style: italic;
+			margin-left: 10px;
+			visibility: hidden;
+		}
+	</style>
+</head>
+<body>
+	<h1 id="text">Form</h1>
+
+	<form id="form" method="" action="">
+
+		<div class="form-row">
+			<label for="name-input">Name: </label>
+			<input type="text" id="name-input" name="name-input" placeholder="Tommy Trojan" /> 
+			<div class="error">Error message</div>
+		</div>
+
+		<div class="form-row">
+			<label for="age-input">Age: </label>
+			<input type="text" id="age-input" name="age-input"/> 
+			<div class="error">Error message</div>
+		</div>
+
+		<div class="form-row">
+			<button type="submit" id="go-button">Go</button>
+		</div>
+
+	</form>
+
+<script type="text/javascript">
+	// document.onkeydown = function() {
+	// 	console.log("onkeydown");
+	// }
+	// document.onkeyup = function() {
+	// 	console.log("onkeyup");
+	// }
+	// // Similar to onkeydown but doesn't register arrows, control, alt, etc
+	// document.onkeypress = function() {
+	// 	console.log("onkeypress");
+	// }
+
+	// let counter = 0;
+	// document.onkeypress = function(event) {
+	// 	// console.log("onkeypress");
+	// 	// console.log(event);
+	// 	console.log(event.key);
+	// 	if (counter == 0)
+	// 		document.querySelector("#text").innerHTML = event.key;
+	// 	else	
+	// 	// Change "Form" to whatever user types
+	// 		document.querySelector("#text").innerHTML += event.key;
+	// 	++counter;
+	// }
+
+	// document.onscroll = function() {
+
+	// }
+
+	// let number = 7;
+	// let number2 = "7";
+	// console.log(1 + number);
+	// console.log(1 + number2);
+
+	// let num = "1";
+	// let dec = "10.1";
+	// console.log(parseInt(num));
+	// console.log(parseFloat(dec));
+
+	// // ---- Strings
+	// let firstName = "Andrew";
+	// let lastName = "Wong";
+	// console.log(firstName + lastName);
+	// console.log(firstName[0]);
+	// console.log(firstName.length);
+	// console.log(firstName.slice(0, 2));
+	// console.log(firstName.indexOf("A"));
+	// console.log(firstName.lastIndexOf("A"));
+	// console.log(firstName.toUpperCase());
+
+	// ---- FORM EVENTS
+	// onchange vs oninput vs onsubmit
+	document.querySelector("#name-input").onchange = function() {
+		console.log("onchange");
+	}
+	document.querySelector("#name-input").oninput = function() {
+		console.log("oninput");
+	}
+	// onsubmit doesn't get triggered until the form is submitted
+	document.querySelector("#form").onsubmit = function(event) {
+		// Prevent the form from being submittied -- this is useful when you want to validate the form BEFORE it gets submitted
+		event.preventDefault();
+		console.log("onsubmit");
+
+		// Run all validation checks here
+		let nameInput = document.querySelector("#name-input").value;
+		let ageInput = document.querySelector("#age-input").value;
+
+		console.log(nameInput);
+
+		// If the nameInput is empty, display the error message
+		if (nameInput.length == 0) {
+			document.querySelector("#name-input").nextElementSibling.style.visibility = "visible";
+			document.querySelector("#name-input").nextElementSibling.innerHTML = "Name cannot be empty";
+		}
+		else
+			document.querySelector("#name-input").nextElementSibling.style.visibility = "hidden";
+
+		// Eventually submit the form this way
+		// document.querySelector("#form").submit();
+	}
+</script>
+
+</body>
+</html>

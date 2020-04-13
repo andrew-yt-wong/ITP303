@@ -95,9 +95,11 @@
 
 	<div class="container">
 
-			<div class="col-12 text-danger">
-				Display Error Messages Here.
-			</div>
+			<?php if ( isset($error) && !empty($error) ) : ?>
+				<div class="text-danger">
+					<?php echo $error; ?>
+				</div>
+			<?php endif; ?>	
 
 			<form action="edit_confirmation.php" method="POST">
 
@@ -124,11 +126,11 @@
 							<?php while( $row = $results_labels->fetch_assoc() ): ?>
 								<?php if( $row['label_id'] == $row_dvd["label_id"]): ?>
 									<option selected value="<?php echo $row['label_id']; ?>">
-										<?php echo $row['title']; ?>
+										<?php echo $row['label']; ?>
 									</option>
 								<?php else: ?>
 									<option value="<?php echo $row['label_id']; ?>">
-										<?php echo $row['title']; ?>
+										<?php echo $row['label']; ?>
 									</option>
 								<?php endif;?>
 							<?php endwhile; ?>
@@ -146,11 +148,11 @@
 							<?php while( $row = $results_sounds->fetch_assoc() ): ?>
 								<?php if( $row['sound_id'] == $row_dvd["sound_id"]): ?>
 									<option selected value="<?php echo $row['sound_id']; ?>">
-										<?php echo $row['title']; ?>
+										<?php echo $row['sound']; ?>
 									</option>
 								<?php else: ?>
 									<option value="<?php echo $row['sound_id']; ?>">
-										<?php echo $row['title']; ?>
+										<?php echo $row['sound']; ?>
 									</option>
 								<?php endif;?>
 							<?php endwhile; ?>
@@ -168,11 +170,11 @@
 							<?php while( $row = $results_genres->fetch_assoc() ): ?>
 								<?php if( $row['genre_id'] == $row_dvd["genre_id"]): ?>
 									<option selected value="<?php echo $row['genre_id']; ?>">
-										<?php echo $row['title']; ?>
+										<?php echo $row['genre']; ?>
 									</option>
 								<?php else: ?>
 									<option value="<?php echo $row['genre_id']; ?>">
-										<?php echo $row['title']; ?>
+										<?php echo $row['genre']; ?>
 									</option>
 								<?php endif;?>
 							<?php endwhile; ?>
@@ -190,11 +192,11 @@
 							<?php while( $row = $results_ratings->fetch_assoc() ): ?>
 								<?php if( $row['rating_id'] == $row_dvd["rating_id"]): ?>
 									<option selected value="<?php echo $row['rating_id']; ?>">
-										<?php echo $row['title']; ?>
+										<?php echo $row['rating']; ?>
 									</option>
 								<?php else: ?>
 									<option value="<?php echo $row['rating_id']; ?>">
-										<?php echo $row['title']; ?>
+										<?php echo $row['rating']; ?>
 									</option>
 								<?php endif;?>
 							<?php endwhile; ?>
@@ -212,11 +214,11 @@
 							<?php while( $row = $results_formats->fetch_assoc() ): ?>
 								<?php if( $row['format_id'] == $row_dvd["format_id"]): ?>
 									<option selected value="<?php echo $row['format_id']; ?>">
-										<?php echo $row['title']; ?>
+										<?php echo $row['format']; ?>
 									</option>
 								<?php else: ?>
 									<option value="<?php echo $row['format_id']; ?>">
-										<?php echo $row['title']; ?>
+										<?php echo $row['format']; ?>
 									</option>
 								<?php endif;?>
 							<?php endwhile; ?>
@@ -228,7 +230,7 @@
 				<div class="form-group row">
 					<label for="award-id" class="col-sm-3 col-form-label text-sm-right">Award:</label>
 					<div class="col-sm-9">
-						<textarea name="award" id="award-id" class="form-control" value="<?php echo $row_dvd['award']?>"></textarea>
+						<textarea name="award" id="award-id" class="form-control"><?php echo $row_dvd['award']?></textarea>
 					</div>
 				</div> <!-- .form-group -->
 

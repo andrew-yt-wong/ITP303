@@ -19,7 +19,7 @@
 		$statement = $mysqli->prepare("DELETE FROM dvd_titles WHERE dvd_title_id = ?");
 		$statement->bind_param("i", $_GET["dvd_title_id"]);
 		$executed = $statement->execute();
-		if (!executed) {
+		if (!$executed) {
 			echo $mysqli->error;
 			exit();
 		}
@@ -51,9 +51,11 @@
 		<div class="row mt-4">
 			<div class="col-12">
 
-				<div class="text-danger">
-					Display Error Messages Here.
-				</div>
+				<?php if ( isset($error) && !empty($error) ) : ?>
+					<div class="text-danger">
+						<?php echo $error; ?>
+					</div>
+				<?php endif; ?>	
 
 				<div class="text-success"><span class="font-italic"><?php echo $_GET['title']; ?></span> was successfully deleted.</div>
 

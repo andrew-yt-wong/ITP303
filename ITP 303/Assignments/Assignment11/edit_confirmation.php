@@ -20,36 +20,36 @@
 			$release_date = "null";
 		}
 
-		if (isset($_POST['label_id']) && !empty($_POST['label_id'])) {
-			$label = $_POST['label_id'];
+		if (isset($_POST['label']) && !empty($_POST['label'])) {
+			$label = $_POST['label'];
 		}
 		else {
 			$label = "null";
 		}
 
-		if (isset($_POST['sound_id']) && !empty($_POST['sound_id'])) {
-			$sound = $_POST['sound_id'];
+		if (isset($_POST['sound']) && !empty($_POST['sound'])) {
+			$sound = $_POST['sound'];
 		}
 		else {
 			$sound = "null";
 		}
 
-		if (isset($_POST['genre_id']) && !empty($_POST['genre_id'])) {
-			$genre = $_POST['genre_id'];
+		if (isset($_POST['genre']) && !empty($_POST['genre'])) {
+			$genre = $_POST['genre'];
 		}
 		else {
 			$genre = "null";
 		}
 
-		if (isset($_POST['rating_id']) && !empty($_POST['rating_id'])) {
-			$rating = $_POST['rating_id'];
+		if (isset($_POST['rating']) && !empty($_POST['rating'])) {
+			$rating = $_POST['rating'];
 		}
 		else {
 			$rating = "null";
 		}
 
-		if (isset($_POST['format_id']) && !empty($_POST['format_id'])) {
-			$format = $_POST['format_id'];
+		if (isset($_POST['format']) && !empty($_POST['format'])) {
+			$format = $_POST['format'];
 		}
 		else {
 			$format = "null";
@@ -68,7 +68,7 @@
 		);
 
 		// Bind the parameters
-		$statement->bind_param("sisi", $_POST["title"], $release_date, $label, $sound, $genre, $rating, $format, $award, $_POST["dvd_title_id"]);
+		$statement->bind_param("ssiiiiisi", $_POST["title"], $release_date, $label, $sound, $genre, $rating, $format, $award, $_POST["dvd_title_id"]);
 
 		$executed = $statement->execute();
 		if(!$executed) {
